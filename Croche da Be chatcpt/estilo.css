@@ -1,0 +1,384 @@
+
+:root { /* Define variáveis globais de cor para manter consistência visual */
+  --sunset-1: #ffb07c; /* Define tom quente claro inspirado no pôr do sol */
+  --sunset-2: #de7e57; /* Define tom terracota médio para gradientes */
+  --sunset-3: #8f4d45; /* Define tom profundo para contraste */
+  --rose: #f7c7c4; /* Define tom rosado suave feminino */
+  --sea: #3b7f99; /* Define tom azul do mar ao entardecer */
+  --gold: #f4d08b; /* Define dourado suave para brilhos e detalhes */
+  --ink: #3f2a28; /* Define cor escura para textos principais */
+  --paper: #fff8f3; /* Define fundo claro aconchegante */
+} /* Finaliza as variáveis globais */
+
+* { /* Aplica estilo base para todos os elementos */
+  margin: 0; /* Remove margens padrão do navegador */
+  padding: 0; /* Remove espaçamentos internos padrão */
+  box-sizing: border-box; /* Inclui borda e padding no cálculo de largura */
+} /* Finaliza configuração global */
+
+html { /* Configura comportamento global do documento */
+  scroll-behavior: smooth; /* Ativa rolagem suave entre âncoras */
+} /* Finaliza regra do elemento html */
+
+body { /* Define estilos gerais do corpo do site */
+  font-family: 'Quicksand', sans-serif; /* Define tipografia principal delicada */
+  color: var(--ink); /* Define cor base de texto */
+  background-color: #849143; /* Cor verde personalizada */
+  background-size: 250% 250%; /* Amplia o gradiente para permitir animação suave */
+  animation: bgFlow 18s ease infinite; /* Anima gradiente para sensação viva e mágica */
+  min-height: 100vh; /* Garante altura mínima ocupando a tela inteira */
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+} /* Finaliza estilos do body */
+
+.bg-stars { /* Cria camada de elementos místicos no fundo */
+  position: fixed; /* Mantém camada fixa durante rolagem */
+  inset: 0; /* Ocupa toda a área visível da janela */
+  pointer-events: none; /* Impede interação do mouse com a camada decorativa */
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.55) 1px, transparent 1px); /* Gera pontos brilhantes como estrelas */
+  background-size: 120px 120px; /* Define espaçamento dos pontos brilhantes */
+  opacity: 0.45; /* Deixa efeito sutil para não competir com conteúdo */
+  z-index: -1; /* Posiciona a camada atrás do conteúdo */
+} /* Finaliza camada de estrelas */
+
+.container { /* Define contêiner reutilizável para centralização */
+  width: min(1120px, 92%); /* Limita largura máxima com respiro lateral */
+  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+} /* Finaliza regra de contêiner */
+
+.header { /* Define aparência do cabeçalho fixo */
+  position: sticky; /* Mantém cabeçalho visível ao rolar */
+  top: 0; /* Fixa no topo da janela */
+  backdrop-filter: blur(10px); /* Aplica desfoque suave no fundo do cabeçalho */
+  background: rgba(255, 248, 243, 0.82); /* Cria fundo translúcido acolhedor */
+  border-bottom: 1px solid rgba(143, 77, 69, 0.25); /* Adiciona divisão sutil com o conteúdo */
+  z-index: 30; /* Mantém cabeçalho acima das demais seções */
+} /* Finaliza estilos do cabeçalho */
+
+.header__content { /* Organiza elementos internos do cabeçalho */
+  display: flex; /* Ativa layout flexível em linha */
+  align-items: center; /* Alinha itens verticalmente ao centro */
+  justify-content: space-between; /* Distribui marca e menu com espaço */
+  gap: 1rem; /* Define espaçamento entre elementos internos */
+  padding: 0.75rem 0; /* Aplica respiro superior e inferior no cabeçalho */
+} /* Finaliza conteúdo do cabeçalho */
+
+.brand { /* Estiliza bloco da marca */
+  display: inline-flex; /* Alinha logo e nome em linha */
+  align-items: center; /* Centraliza verticalmente logo e texto */
+  gap: 0.65rem; /* Define distância entre logo e nome */
+  text-decoration: none; /* Remove sublinhado do link da marca */
+  color: var(--ink); /* Define cor do texto da marca */
+} /* Finaliza regra da marca */
+
+.brand__logo { /* Define estilo da imagem da logo */
+  width: 82px; /* Define largura fixa da logo */
+  height: 82px; /* Define altura fixa da logo */
+  object-fit: cover; /* Ajusta imagem sem distorção */
+  border-radius: 50%; /* Torna logo circular para aparência moderna */
+  border: 2px solid rgba(244, 208, 139, 0.7); /* Cria contorno dourado suave */
+  box-shadow: 0 0 16px rgba(244, 208, 139, 0.35); /* Adiciona brilho sutil místico */
+} /* Finaliza estilo da logo */
+
+.brand__name { /* Estiliza nome da marca no cabeçalho */
+  font-family: 'Playfair Display', serif; /* Usa fonte elegante para identidade artesanal */
+  font-size: 1.75rem; /* Define tamanho de destaque para o nome */
+  font-weight: 700; /* Intensifica presença tipográfica do nome */
+} /* Finaliza nome da marca */
+
+.nav { /* Define layout da navegação desktop */
+  display: flex; /* Organiza links em linha */
+  align-items: center; /* Centraliza links verticalmente */
+  gap: 0.8rem; /* Cria espaço entre links de navegação */
+} /* Finaliza bloco da navegação */
+
+.nav a { /* Estiliza links de navegação */
+  text-decoration: none; /* Remove sublinhado padrão dos links */
+  color: var(--ink); /* Define cor harmônica dos links */
+  font-weight: 700; /* Destaca links para melhor leitura */
+  padding: 0.45rem 0.8rem; /* Cria área clicável confortável */
+  border-radius: 999px; /* Deixa links com visual arredondado */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Suaviza efeitos de hover */
+} /* Finaliza estilo dos links de navegação */
+
+.nav a:hover { /* Aplica efeito quando passa o mouse no menu */
+  background-color: rgba(244, 208, 139, 0.45); /* Realça link com tom dourado suave */
+  transform: translateY(-2px); /* Eleva o link para efeito elegante */
+} /* Finaliza hover do menu */
+
+.menu-toggle { /* Estiliza botão de menu mobile */
+  display: none; /* Esconde botão em telas maiores */
+  border: none; /* Remove borda padrão do botão */
+  background: rgba(143, 77, 69, 0.15); /* Aplica fundo suave no botão */
+  color: var(--ink); /* Define cor do ícone no botão */
+  width: 42px; /* Define largura do botão circular */
+  height: 42px; /* Define altura do botão circular */
+  border-radius: 50%; /* Torna botão totalmente arredondado */
+  font-size: 1.2rem; /* Define tamanho do símbolo místico */
+  cursor: pointer; /* Indica que botão é clicável */
+} /* Finaliza estilo do botão mobile */
+
+.hero { /* Define aparência da seção principal hero */
+  padding: 5rem 0 4rem; /* Cria espaçamento amplo para destaque inicial */
+} /* Finaliza bloco hero */
+
+.hero__content { /* Organiza conteúdo interno da seção hero */
+  text-align: center; /* Centraliza o conteúdo textual */
+  background: rgba(255, 248, 243, 0.76); /* Cria cartão translúcido acolhedor */
+  border: 1px solid rgba(143, 77, 69, 0.25); /* Define borda suave na área principal */
+  border-radius: 28px; /* Arredonda bordas para aparência delicada */
+  padding: 2.4rem; /* Adiciona respiro interno ao conteúdo hero */
+  box-shadow: 0 12px 30px rgba(63, 42, 40, 0.14); /* Adiciona profundidade sutil */
+} /* Finaliza conteúdo hero */
+
+.hero__subtitle { /* Estiliza subtítulo da seção hero */
+  text-transform: uppercase; /* Deixa subtítulo em caixa alta */
+  letter-spacing: 0.16em; /* Aumenta espaçamento entre letras */
+  font-weight: 700; /* Destaca subtítulo de apoio */
+  color: var(--sunset-3); /* Usa tom profundo da paleta temática */
+  margin-bottom: 0.6rem; /* Cria distância do título principal */
+} /* Finaliza subtítulo hero */
+
+.hero h1 { /* Estiliza título principal da seção hero */
+  font-family: 'Playfair Display', serif; /* Usa fonte elegante para impacto */
+  font-size: clamp(2rem, 5vw, 3.1rem); /* Ajusta tamanho do título conforme tela */
+  line-height: 1.1; /* Melhora legibilidade em múltiplas linhas */
+  margin-bottom: 1rem; /* Cria espaçamento abaixo do título */
+} /* Finaliza título hero */
+
+.hero__text { /* Estiliza texto descritivo da seção hero */
+  max-width: 700px; /* Limita largura para leitura confortável */
+  margin: 0 auto 1.6rem; /* Centraliza texto e adiciona espaçamento inferior */
+  font-size: 1.05rem; /* Define tamanho agradável de leitura */
+} /* Finaliza texto hero */
+
+.section { /* Define espaçamento padrão de seções */
+  padding: 1.5rem 0 3.4rem; /* Cria ritmo vertical entre seções */
+} /* Finaliza bloco base de seção */
+
+.section__title { /* Estiliza títulos das seções */
+  text-align: center; /* Centraliza títulos para unidade visual */
+  font-family: 'Playfair Display', serif; /* Usa fonte elegante nos títulos */
+  font-size: clamp(1.6rem, 3vw, 2.25rem); /* Ajusta tamanho conforme a tela */
+  margin-bottom: 1.5rem; /* Define espaço antes do conteúdo da seção */
+} /* Finaliza estilo de títulos de seção */
+
+.catalog-grid { /* Define grade de produtos do catálogo */
+  display: grid; /* Ativa layout em grade */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas responsivas automáticas */
+  gap: 1.2rem; /* Define espaçamento entre cards */
+} /* Finaliza grade do catálogo */
+
+.card { /* Estiliza card individual de produto */
+  background: rgba(255, 248, 243, 0.88); /* Aplica fundo claro translúcido */
+  border-radius: 20px; /* Arredonda os cantos do card */
+  overflow: hidden; /* Garante que imagem respeite o arredondamento */
+  border: 1px solid rgba(143, 77, 69, 0.24); /* Adiciona contorno suave */
+  box-shadow: 0 8px 20px rgba(63, 42, 40, 0.1); /* Cria profundidade leve */
+  transition: transform 0.35s ease, box-shadow 0.35s ease; /* Suaviza animação de hover */
+} /* Finaliza card de produto */
+
+.card:hover { /* Define efeito ao passar o mouse no card */
+  transform: translateY(-6px); /* Move card para cima com suavidade */
+  box-shadow: 0 15px 28px rgba(63, 42, 40, 0.16); /* Intensifica sombra no hover */
+} /* Finaliza hover do card */
+
+.card__img { /* Estiliza imagem do produto */
+  width: 100%; /* Ocupa toda largura do card */
+  height: 220px; /* Define altura fixa para uniformidade */
+  object-fit: cover; /* Recorta imagem sem distorcer */
+} /* Finaliza imagem do card */
+
+.card__body { /* Define área interna de textos do card */
+  padding: 1rem; /* Cria espaçamento interno confortável */
+  display: grid; /* Organiza conteúdo de forma estruturada */
+  gap: 0.7rem; /* Define distância entre texto e ações */
+} /* Finaliza corpo do card */
+
+.card__meta { /* Organiza preço e botão no card */
+  display: flex; /* Coloca preço e botão lado a lado */
+  justify-content: space-between; /* Separa os dois itens nas extremidades */
+  align-items: center; /* Alinha verticalmente os itens */
+  gap: 0.5rem; /* Define pequeno espaço entre elementos */
+} /* Finaliza meta do card */
+
+.card__meta span { /* Estiliza valor do produto */
+  font-weight: 700; /* Dá destaque visual ao preço */
+  color: var(--sunset-3); /* Usa cor temática para o preço */
+} /* Finaliza estilo do preço */
+
+.gallery-grid { /* Define grade de imagens da galeria */
+  display: grid; /* Ativa layout em grid */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Cria colunas responsivas para fotos */
+  gap: 0.8rem; /* Define espaçamento entre fotos */
+} /* Finaliza grade da galeria */
+
+.gallery-grid img { /* Estiliza imagens dentro da galeria */
+  width: 100%; /* Faz imagem ocupar toda célula da grade */
+  height: 220px; /* Define altura padronizada para mosaico */
+  object-fit: cover; /* Preserva proporção com recorte elegante */
+  border-radius: 14px; /* Arredonda cantos das fotos */
+  transition: transform 0.35s ease, filter 0.35s ease; /* Suaviza efeitos de interação */
+  border: 1px solid rgba(244, 208, 139, 0.4); /* Cria moldura dourada sutil */
+} /* Finaliza estilo das fotos da galeria */
+
+.gallery-grid img:hover { /* Aplica efeito hover nas fotos da galeria */
+  transform: scale(1.03); /* Aumenta levemente a imagem */
+  filter: saturate(1.1) brightness(1.03); /* Realça cor e brilho da imagem */
+} /* Finaliza hover das imagens */
+
+.video-grid { /* Define grade para cards de vídeo */
+  display: grid; /* Ativa disposição em grade */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cria colunas adaptáveis para vídeos */
+  gap: 1rem; /* Define espaço entre vídeos */
+} /* Finaliza grade de vídeos */
+
+.video-card { /* Estiliza bloco individual de vídeo */
+  background: rgba(255, 248, 243, 0.88); /* Aplica fundo claro alinhado ao tema */
+  border-radius: 16px; /* Arredonda cantos dos blocos */
+  border: 1px solid rgba(143, 77, 69, 0.24); /* Adiciona contorno delicado */
+  overflow: hidden; /* Garante que mídia respeite bordas arredondadas */
+  box-shadow: 0 8px 20px rgba(63, 42, 40, 0.1); /* Aplica sombra suave */
+  height: 420px; /* trava a altura do card */
+  display: flex; /* impede redimensionamento estranho */
+} /* Finaliza estilo do card de vídeo */
+
+
+.video-card video { /* Seleciona vídeo HTML5 dentro do card */
+  width: 100%; /* Faz mídia ocupar toda largura do card */
+  height: 100%; /* ocupa todo o card */
+  border: 0; /* Remove bordas padrão da mídia */
+  display: block; /* Evita espaços extras abaixo da mídia */
+  object-fit: cover; /* faz o vídeo preencher sem esticar */
+  display: block;
+} /* Finaliza estilo das mídias */
+
+.steps { /* Estiliza caixa da seção de encomendas */
+  background: rgba(255, 248, 243, 0.86); /* Define fundo claro com transparência */
+  border-radius: 20px; /* Cria cantos suaves */
+  border: 1px solid rgba(143, 77, 69, 0.24); /* Adiciona borda temática */
+  padding: 1.5rem; /* Aplica espaçamento interno */
+} /* Finaliza estilo de passos */
+
+.steps ol { /* Estiliza lista ordenada de encomendas */
+  display: grid; /* Organiza passos verticalmente com consistência */
+  gap: 0.65rem; /* Cria espaçamento entre passos */
+  margin: 0 0 1.2rem 1.2rem; /* Ajusta margem para alinhamento da numeração */
+} /* Finaliza lista de passos */
+
+.about { /* Estiliza bloco da seção sobre */
+  background: rgba(255, 248, 243, 0.86); /* Aplica fundo acolhedor na seção */
+  border: 1px solid rgba(143, 77, 69, 0.24); /* Cria contorno harmonioso */
+  border-radius: 20px; /* Arredonda cantos para visual suave */
+  padding: 1.6rem; /* Aplica espaçamento interno da seção */
+} /* Finaliza bloco sobre */
+
+.about p { /* Estiliza parágrafos da seção sobre */
+  margin-bottom: 0.85rem; /* Define espaçamento entre parágrafos */
+  line-height: 1.6; /* Melhora legibilidade do texto corrido */
+} /* Finaliza estilo de parágrafos sobre */
+
+.btn { /* Define estilo base de botões e links de ação */
+  display: inline-flex; /* Mantém alinhamento central do conteúdo */
+  align-items: center; /* Centraliza verticalmente texto do botão */
+  justify-content: center; /* Centraliza horizontalmente texto do botão */
+  border-radius: 999px; /* Cria formato pílula elegante */
+  border: 1px solid transparent; /* Reserva espaço para borda sem pular layout */
+  padding: 0.65rem 1.2rem; /* Define área clicável confortável */
+  text-decoration: none; /* Remove sublinhado quando usado em links */
+  font-weight: 700; /* Destaca texto do botão */
+  cursor: pointer; /* Indica interatividade do elemento */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Suaviza efeitos de interação */
+} /* Finaliza estilo base dos botões */
+
+.btn:hover { /* Define efeito padrão de hover para botões */
+  transform: translateY(-2px); /* Eleva botão para feedback visual */
+  box-shadow: 0 8px 15px rgba(63, 42, 40, 0.18); /* Adiciona sombra sutil no hover */
+} /* Finaliza hover base de botões */
+
+.btn--primary { /* Estiliza botão principal da hero */
+  background: linear-gradient(120deg, var(--sunset-2), var(--sunset-3)); /* Cria gradiente quente do botão principal */
+  color: #fff; /* Define texto branco para contraste */
+} /* Finaliza botão principal */
+
+.btn--outline { /* Estiliza botão secundário dos cards */
+  background: transparent; /* Mantém fundo transparente */
+  color: var(--sunset-3); /* Usa cor temática no texto */
+  border-color: rgba(143, 77, 69, 0.5); /* Define borda temática no botão */
+} /* Finaliza botão secundário */
+
+.btn--outline:hover { /* Define hover do botão secundário */
+  background: rgba(143, 77, 69, 0.1); /* Preenche levemente fundo no hover */
+} /* Finaliza hover do botão secundário */
+
+.btn--whatsapp { /* Estiliza botão fictício de WhatsApp */
+  background: linear-gradient(120deg, #34d163, #1f9f45); /* Usa gradiente verde característico */
+  color: #000000; /* Define texto branco para alta legibilidade */
+} /* Finaliza botão de WhatsApp */
+
+.btn--mercado { /* Estiliza botão fictício de mercado livre */
+  background: linear-gradient(120deg, #FFF176, #FFE600); /* Usa gradiente amarelo característico */
+  color: #000000; /* Define texto branco para alta legibilidade */
+} /* Finaliza botão de mercado livre */
+
+.footer { /* Define aparência do rodapé */
+  background-color: #435c2f; /* Cor verde personalizada */
+  color: #fef6ef; /* Define cor clara para os textos do rodapé */
+  padding: 2rem 0; /* Cria espaçamento interno vertical */
+  margin-top: 2rem; /* Separa visualmente rodapé do conteúdo */
+} /* Finaliza rodapé */
+
+.footer__content { /* Organiza conteúdo interno do rodapé */
+  display: grid; /* Usa grid para alinhar itens em coluna */
+  gap: 0.8rem; /* Define espaçamento entre blocos do rodapé */
+  text-align: center; /* Centraliza o texto do rodapé */
+} /* Finaliza conteúdo do rodapé */
+
+.footer__social { /* Estiliza linha de redes sociais */
+  display: flex; /* Organiza links em linha */
+  justify-content: center; /* Centraliza links no eixo horizontal */
+  gap: 0.8rem; /* Define distância entre links sociais */
+  flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+} /* Finaliza bloco de redes sociais */
+
+.footer__social a { /* Estiliza links sociais no rodapé */
+  color: #fff; /* Define cor branca para os links */
+  text-decoration: none; /* Remove sublinhado padrão */
+  padding: 0.35rem 0.8rem; /* Cria área de clique adequada */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Delimita link com borda discreta */
+  border-radius: 999px; /* Cria formato arredondado dos chips */
+} /* Finaliza links sociais */
+
+.footer__quote { /* Estiliza frase inspiradora */
+  font-family: 'Playfair Display', serif; /* Usa fonte elegante para a citação */
+  font-size: 1.15rem; /* Define tamanho levemente maior para destaque */
+} /* Finaliza frase do rodapé */
+
+.reveal { /* Define estado inicial dos elementos animados na rolagem */
+  opacity: 0; /* Deixa elemento invisível inicialmente */
+  transform: translateY(18px); /* Move elemento ligeiramente para baixo no início */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Suaviza a entrada no viewport */
+} /* Finaliza estado inicial de animação */
+
+.reveal.visible { /* Define estado final quando elemento entra na tela */
+  opacity: 1; /* Torna elemento totalmente visível */
+  transform: translateY(0); /* Reposiciona elemento para posição original */
+} /* Finaliza estado visível de animação */
+
+@keyframes bgFlow { /* Declara animação para movimento do gradiente de fundo */
+  0% { background-position: 0% 50%; } /* Define posição inicial do gradiente */
+  50% { background-position: 100% 50%; } /* Define posição intermediária do gradiente */
+  100% { background-position: 0% 50%; } /* Retorna gradiente para posição inicial */
+} /* Finaliza keyframes da animação de fundo */
+
+@media (max-width: 860px) { /* Inicia ajustes para tablets e telas menores */
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; } /* Exibe botão de menu mobile centralizando ícone */
+  .nav { position: absolute; top: 82px; right: 4%; flex-direction: column; align-items: stretch; min-width: 220px; padding: 0.7rem; background: rgba(255, 248, 243, 0.96); border: 1px solid rgba(143, 77, 69, 0.28); border-radius: 14px; box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: 0.3s ease; } /* Converte navegação para menu suspenso mobile */
+  .nav.is-open { opacity: 1; visibility: visible; transform: translateY(0); } /* Mostra menu quando ativado no mobile */
+} /* Finaliza media query para tablets */
+
+@media (max-width: 560px) { /* Inicia ajustes para celulares */
+  .brand__name { font-size: 1.2rem; } /* Reduz tamanho do nome da marca no mobile */
+  .hero { padding-top: 3.5rem; } /* Ajusta espaçamento da seção hero em telas pequenas */
+  .hero__content { padding: 1.5rem; } /* Reduz padding interno do hero no mobile */
+  .card__img { height: 190px; } /* Ajusta altura da imagem dos cards no celular */
+} /* Finaliza media query para celulares */

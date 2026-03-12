@@ -1,0 +1,230 @@
+
+<!DOCTYPE html> <!-- Define o tipo do documento como HTML5 -->
+<html lang="pt-BR"> <!-- Inicia o documento HTML com idioma português do Brasil -->
+<head> <!-- Inicia a área de metadados da página -->
+  <meta charset="UTF-8"> <!-- Define codificação UTF-8 para suportar acentos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Garante responsividade em dispositivos móveis -->
+  <meta name="description" content="Catálogo online Crochê da Be com peças artesanais feitas com amor, energia e alma."> <!-- Descreve a página para SEO -->
+  <title>Crochê da Be | Catálogo Artesanal</title> <!-- Define o título exibido na aba do navegador -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Otimiza conexão com o servidor de fontes do Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Otimiza conexão com arquivos de fontes com CORS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Importa tipografias delicadas e femininas -->
+  <link rel="icon" href="icon.ico" type="image/x-icon"> <!-- Define o ícone da aba da página -->
+  <link rel="stylesheet" href="estilo.css"> <!-- Vincula o arquivo CSS externo -->
+</head> <!-- Finaliza a área de metadados da página -->
+<body> <!-- Inicia o conteúdo visível da página -->
+  <div class="bg-stars" aria-hidden="true"></div> <!-- Camada decorativa com brilho sutil místico -->
+
+  <header id="inicio" class="header"> <!-- Inicia o cabeçalho com âncora para início -->
+    <div class="container header__content"> <!-- Cria contêiner central para logo e navegação -->
+      <a href="#inicio" class="brand" aria-label="Voltar ao início"> <!-- Cria link da marca para voltar ao topo -->
+        <img src="croche da be.png" alt="Logo da marca Crochê da Be" class="brand__logo"> <!-- Exibe a logo da marca enviada -->
+        <span class="brand__name">Crochê da Be</span> <!-- Exibe o nome textual da marca -->
+      </a> <!-- Finaliza o link da marca -->
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☾</button> <!-- Cria botão de menu para mobile com símbolo místico -->
+      <nav id="menu" class="nav"> <!-- Inicia a navegação principal do site -->
+        <a href="#inicio">Início</a> <!-- Link para seção inicial -->
+        <a href="#catalogo">Catálogo</a> <!-- Link para seção de catálogo -->
+        <a href="#fotos">Fotos e Vídeos</a> <!-- Link para seção sobre a criadora -->
+        <a href="#encomendar">Como Encomendar</a> <!-- Link para seção de encomendas -->
+        <a href="#contato">Contato</a> <!-- Link para seção de contato -->
+      </nav> <!-- Finaliza a navegação principal -->
+    </div> <!-- Finaliza contêiner do cabeçalho -->
+  </header> <!-- Finaliza o cabeçalho -->
+
+  <main> <!-- Inicia o conteúdo principal da página -->
+    <section class="hero reveal"> <!-- Inicia a seção hero com animação de entrada -->
+      <div class="container hero__content"> <!-- Cria contêiner interno da seção hero -->
+        <p class="hero__subtitle">Peças únicas feitas a mão</p> <!-- Exibe subtítulo da proposta da marca -->
+        <h1>Peças em Crochê feitas com amor, energia e alma.</h1> <!-- Exibe frase de impacto principal -->
+        <p class="hero__text">Descubra criações artesanais, cada detalhe é único e pensado especialmente para você!</p> <!-- Exibe texto de apoio -->
+        <a href="#catalogo" class="btn btn--primary">Ver Catálogo</a> <!-- Exibe botão de chamada para ação -->
+      </div> <!-- Finaliza contêiner interno da seção hero -->
+    </section> <!-- Finaliza a seção hero -->
+
+      <!-- TOP BRANCO DO BRASIL -->
+
+    <section id="catalogo" class="section reveal"> <!-- Inicia a seção de catálogo com identificação para navegação -->
+      <div class="container"> <!-- Cria contêiner central da seção -->
+        <h2 class="section__title">Catálogo Artesanal</h2> <!-- Exibe título da seção de catálogo -->
+        <div class="catalog-grid"> <!-- Inicia grade responsiva dos cards de produtos -->
+          <article class="card"> <!-- Inicia card de produto -->
+            <img src="img\top branco brasil 2.jpeg" alt="Top branco do brasil" class="card__img"> <!-- Exibe imagem ilustrativa do produto -->
+            <div class="card__body"> <!-- Inicia área de texto do card -->
+              <h3>Top Branco do Brasil</h3> <!-- Exibe nome da peça -->
+              <p>Top de crochê branco com detalhes nas cores do Brasil, perfeito para torcer com estilo.</p> <!-- Exibe descrição curta da peça -->
+              <div class="card__meta"> <!-- Inicia área de preço e ação -->
+                <span>R$ 130,00</span> <!-- Exibe preço do item -->
+                <button class="btn btn--outline">Saiba mais!</button> <!-- Exibe botão para saber mais informações -->
+              </div> <!-- Finaliza área de preço e ação -->
+            </div> <!-- Finaliza área de texto do card -->
+          </article> <!-- Finaliza card de produto -->
+
+          <!-- TOP COLORIDO DO BRASIL -->
+
+          <article class="card"> <!-- Inicia card de produto -->
+            <img src="img\top colorido brasil 2.jpeg" alt="top colorido do brasil" class="card__img"> <!-- Exibe imagem ilustrativa do produto -->
+            <div class="card__body"> <!-- Inicia área de texto do card -->
+              <h3>Top Colorido do Brasil</h3> <!-- Exibe nome da peça -->
+              <p>Top artesanal com as cores da bandeira do Brasil, vibrante e ideal para dias de jogo.</p> <!-- Exibe descrição curta da peça -->
+              <div class="card__meta"> <!-- Inicia área de preço e ação -->
+                <span>R$ 90,00</span> <!-- Exibe preço fictício do item -->
+                <button class="btn btn--outline">Saiba mais!</button> <!-- Exibe botão para saber mais informações -->
+              </div> <!-- Finaliza área de preço e ação -->
+            </div> <!-- Finaliza área de texto do card -->
+          </article> <!-- Finaliza card de produto -->
+
+          <!-- BIQUINI DO BRASIL -->
+
+          <article class="card"> <!-- Inicia card de produto -->
+            <img src="img\biquini brasil 1.jpeg" alt="biquini branco do brasil" class="card__img"> <!-- Exibe imagem ilustrativa do produto -->
+            <div class="card__body"> <!-- Inicia área de texto do card -->
+              <h3>Biquini Branco do Brasil</h3> <!-- Exibe nome da peça -->
+              <p>Biquíni de crochê branco com acabamento verde e amarelo, delicado e cheio de personalidade.</p> <!-- Exibe descrição curta da peça -->
+              <div class="card__meta"> <!-- Inicia área de preço e ação -->
+                <span>R$ 70,00</span> <!-- Exibe preço fictício do item -->
+                <button class="btn btn--outline">Saiba mais!</button> <!-- Exibe botão para saber mais informações -->
+              </div> <!-- Finaliza área de preço e ação -->
+            </div> <!-- Finaliza área de texto do card -->
+          </article> <!-- Finaliza card de produto -->
+
+          <!-- TOP FRANJA AZUL -->
+
+          <article class="card"> <!-- Inicia card de produto -->
+            <img src="img\top franja azul 1.jpeg" alt="top com franja azul" class="card__img"> <!-- Exibe imagem ilustrativa do produto -->
+            <div class="card__body"> <!-- Inicia área de texto do card -->
+              <h3>Top com Franja Azul</h3> <!-- Exibe nome da peça -->
+              <p>Top de crochê azul com franjas longas que dão movimento e destaque ao look.</p> <!-- Exibe descrição curta da peça -->
+              <div class="card__meta"> <!-- Inicia área de preço e ação -->
+                <span>R$ 130,00</span> <!-- Exibe preço fictício do item -->
+                <button class="btn btn--outline">Saiba mais!</button> <!-- Exibe botão para saber mais informações -->
+              </div> <!-- Finaliza área de preço e ação -->
+            </div> <!-- Finaliza área de texto do card -->
+          </article> <!-- Finaliza card de produto -->
+
+          <!-- TOP FRANJA PRETO -->
+
+          <article class="card"> <!-- Inicia card de produto -->
+            <img src="img\top franja preto 1.jpeg" alt="Saída de praia em crochê" class="card__img"> <!-- Exibe imagem ilustrativa do produto -->
+            <div class="card__body"> <!-- Inicia área de texto do card -->
+              <h3>Top com Franja Linha Encanto</h3> <!-- Exibe nome da peça -->
+              <p>Top preto artesanal com franjas elegantes, perfeito para um visual marcante.</p> <!-- Exibe descrição curta da peça -->
+              <div class="card__meta"> <!-- Inicia área de preço e ação -->
+                <span>R$ 160,00</span> <!-- Exibe preço fictício do item -->
+                <button class="btn btn--outline">Saiba mais!</button> <!-- Exibe botão para saber mais informações -->
+              </div> <!-- Finaliza área de preço e ação -->
+            </div> <!-- Finaliza área de texto do card -->
+          </article> <!-- Finaliza card de produto -->
+
+          <!-- TOP SIMPLES -->
+
+          <article class="card"> <!-- Inicia card de produto -->
+            <img src="img\top simples 1.jpeg" alt="Saída de praia em crochê" class="card__img"> <!-- Exibe imagem ilustrativa do produto -->
+            <div class="card__body"> <!-- Inicia área de texto do card -->
+              <h3>Top Simples Terracota</h3> <!-- Exibe nome da peça -->
+              <p>Top de crochê terracota com design minimalista e confortável para o dia a dia.</p> <!-- Exibe descrição curta da peça -->
+              <div class="card__meta"> <!-- Inicia área de preço e ação -->
+                <span>R$ 70,00</span> <!-- Exibe preço fictício do item -->
+                <button class="btn btn--outline">Saiba mais!</button> <!-- Exibe botão para saber mais informações -->
+              </div> <!-- Finaliza área de preço e ação -->
+            </div> <!-- Finaliza área de texto do card -->
+          </article> <!-- Finaliza card de produto -->
+
+          <!-- TOP LINHAS CINZA -->
+
+          <article class="card"> <!-- Inicia card de produto -->
+            <img src="img\top linhas cinza 1.jpeg" alt="Chapéu artesanal em crochê" class="card__img"> <!-- Exibe imagem ilustrativa do produto -->
+            <div class="card__body"> <!-- Inicia área de texto do card -->
+              <h3>Top com Linhas Cinza</h3> <!-- Exibe nome da peça -->
+              <p>Top em crochê cinza com tiras decorativas que valorizam o visual.</p> <!-- Exibe descrição curta da peça -->
+              <div class="card__meta"> <!-- Inicia área de preço e ação -->
+                <span>R$ 90,00</span> <!-- Exibe preço fictício do item -->
+                <button class="btn btn--outline">Saiba mais!</button> <!-- Exibe botão para saber mais informações -->
+              </div> <!-- Finaliza área de preço e ação -->
+            </div> <!-- Finaliza área de texto do card -->
+          </article> <!-- Finaliza card de produto -->
+        </div> <!-- Finaliza grade responsiva dos cards -->
+      </div> <!-- Finaliza contêiner central da seção -->
+    </section> <!-- Finaliza a seção de catálogo -->
+
+    <section id="fotos" class="section reveal"> <!-- Inicia seção de galeria com animação -->
+      <div class="container"> <!-- Cria contêiner central da seção -->
+        <h2 class="section__title">Galeria de Fotos</h2> <!-- Exibe título da seção de fotos -->
+        <div class="gallery-grid"> <!-- Inicia grade moderna da galeria -->
+          <img src="img\top branco brasil 4.jpeg" alt="caimento da peça no corpo"> <!-- Exibe foto da galeria -->
+          <img src="img\top colorido brasil 4.jpeg" alt="caimento da peça no corpo"> <!-- Exibe foto da galeria -->
+          <img src="img\top simples 1.jpeg" alt="caimento da peça no corpo"> <!-- Exibe foto da galeria -->
+          <img src="img\top linhas cinza 1.jpeg" alt="caimento da peça no corpo"> <!-- Exibe foto da galeria -->
+          <img src="img\biquini brasil 2.jpeg" alt="modelo em outro angulo"> <!-- Exibe foto da galeria -->
+          <img src="img\top franja azul 2.jpeg" alt="modelo em outro angulo"> <!-- Exibe foto da galeria -->
+          <img src="img\top franja preto 2.jpeg" alt="modelo em outro angulo"> <!-- Exibe foto da galeria -->
+        </div> <!-- Finaliza grade da galeria -->
+      </div> <!-- Finaliza contêiner central da seção -->
+    </section> <!-- Finaliza seção de galeria -->
+
+    <section class="section reveal"> <!-- Inicia seção de vídeos com animação -->
+      <div class="container"> <!-- Cria contêiner central da seção -->
+        <h2 class="section__title">Vídeos das Peças em Crochê</h2> <!-- Exibe título da seção de vídeos -->
+        <div class="video-grid"> <!-- Inicia grade de vídeos responsiva -->
+
+        <div class="video-card"> <!-- Inicia card de vídeo local/externo -->
+          <video controls preload="metadata" poster="img/top colorido brasil 2.jpeg"> <!-- Cria player de vídeo com capa -->
+              <source src="img/video top colorido brasil.mp4" type="video/mp4"> <!-- Define fonte de vídeo em MP4 -->
+              Seu navegador não suporta vídeo HTML5. <!-- Exibe mensagem para navegadores antigos -->
+            </video> <!-- Finaliza player de vídeo -->
+          </div> <!-- Finaliza card de vídeo local/externo -->
+
+          <div class="video-card"> <!-- Inicia card de vídeo local/externo -->
+            <video controls preload="metadata" poster="img/top branco brasil 2.jpeg"> <!-- Cria player de vídeo com capa -->
+              <source src="img/video top branco brasil.mp4" type="video/mp4"> <!-- Define fonte de vídeo em MP4 -->
+              Seu navegador não suporta vídeo HTML5. <!-- Exibe mensagem para navegadores antigos -->
+            </video> <!-- Finaliza player de vídeo -->
+          </div> <!-- Finaliza card de vídeo local/externo -->
+
+          <div class="video-card"> <!-- Inicia card de vídeo local/externo -->
+            <video controls preload="metadata" poster="img/top franja preto 1.jpeg"> <!-- Cria player de vídeo com capa -->
+              <source src="img/video top franja preto.mp4" type="video/mp4"> <!-- Define fonte de vídeo em MP4 -->
+              Seu navegador não suporta vídeo HTML5. <!-- Exibe mensagem para navegadores antigos -->
+            </video> <!-- Finaliza player de vídeo -->
+          </div> <!-- Finaliza card de vídeo local/externo -->
+
+          <div class="video-card"> <!-- Inicia card de vídeo local/externo -->
+            <video controls preload="metadata" poster="img/top linhas cinza 1.jpeg"> <!-- Cria player de vídeo com capa -->
+              <source src="img/video top linhas cinza.mp4" type="video/mp4"> <!-- Define fonte de vídeo em MP4 -->
+              Seu navegador não suporta vídeo HTML5. <!-- Exibe mensagem para navegadores antigos -->
+            </video> <!-- Finaliza player de vídeo -->
+          </div> <!-- Finaliza card de vídeo local/externo -->
+
+        </div> <!-- Finaliza grade de vídeos responsiva -->
+      </div> <!-- Finaliza contêiner central da seção -->
+    </section> <!-- Finaliza seção de vídeos -->
+
+    <section id="encomendar" class="section reveal"> <!-- Inicia seção de como encomendar com âncora -->
+      <div class="container steps"> <!-- Cria contêiner central com estilo de passos -->
+        <h2 class="section__title">Como Fazer Encomendas</h2> <!-- Exibe título da seção de encomendas -->
+        <ol> <!-- Inicia lista ordenada com passo a passo -->
+          <li>Escolha a peça que mais combina com sua energia no catálogo.</li> <!-- Exibe passo 1 -->
+          <li>Clique no botão <strong>Saiba Mais</strong> da peça desejada.</li> <!-- Exibe passo 2 -->
+          <li>Entre em contato pelo WhatsApp ou Instagram da marca para peças personalizadas.</li> <!-- Exibe passo 3 -->
+          <li>Entre no link de compra do Mercado Livre para peças prontas.</li> <!-- Exibe passo 4 -->
+        </ol> <!-- Finaliza lista ordenada -->
+        <a href="#" class="btn btn--whatsapp" aria-label="Abrir conversa no WhatsApp">Falar no WhatsApp</a> <!-- Exibe botão fictício de WhatsApp -->
+        <a href="#" class="btn btn--mercado" aria-label="Abrir perfil do mercado livre">Mercado Livre</a> <!-- Exibe botão fictício de Mercado Livre -->
+      </div> <!-- Finaliza contêiner da seção -->
+    </section> <!-- Finaliza seção de como encomendar -->
+
+  <footer id="contato" class="footer"> <!-- Inicia rodapé com âncora de contato -->
+    <div class="container footer__content"> <!-- Cria contêiner central do rodapé -->
+      <div class="footer__social"> <!-- Inicia bloco de redes sociais -->
+        <a href="#" aria-label="Instagram">Instagram</a> <!-- Exibe link fictício do Instagram -->
+        <a href="#" aria-label="WhatsApp">WhatsApp</a> <!-- Exibe link fictício do WhatsApp -->
+        <a href="#" aria-label="TikTok">TikTok</a> <!-- Exibe link fictício do TikTok -->
+      </div> <!-- Finaliza bloco de redes sociais -->
+      <p class="footer__quote">“Entre fios, estrelas e marés, cada ponto carrega amor.”</p> <!-- Exibe frase inspiradora -->
+      <p class="footer__copy">© 2026 Crochê da Be. Todos os direitos reservados.</p> <!-- Exibe direitos autorais -->
+    </div> <!-- Finaliza contêiner central do rodapé -->
+  </footer> <!-- Finaliza rodapé -->
+
+  <script src="script.js"></script> <!-- Importa o arquivo JavaScript externo -->
+</body> <!-- Finaliza o conteúdo visível da página -->
+</html> <!-- Finaliza o documento HTML -->
