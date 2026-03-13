@@ -249,7 +249,6 @@ body { /* Define estilos gerais do corpo do site */
   border: 0; /* Remove bordas padrão da mídia */
   display: block; /* Evita espaços extras abaixo da mídia */
   object-fit: cover; /* faz o vídeo preencher sem esticar */
-  display: block;
 } /* Finaliza estilo das mídias */
 
 .steps { /* Estiliza caixa da seção de encomendas */
@@ -288,6 +287,9 @@ body { /* Define estilos gerais do corpo do site */
   font-weight: 700; /* Destaca texto do botão */
   cursor: pointer; /* Indica interatividade do elemento */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Suaviza efeitos de interação */
+  font-family: arial; /* faz o botão usar a mesma fonte do site */
+  font-size:13.3333px; /* define tamanho igual ao padrão */
+  line-height:1;
 } /* Finaliza estilo base dos botões */
 
 .btn:hover { /* Define efeito padrão de hover para botões */
@@ -382,3 +384,190 @@ body { /* Define estilos gerais do corpo do site */
   .hero__content { padding: 1.5rem; } /* Reduz padding interno do hero no mobile */
   .card__img { height: 190px; } /* Ajusta altura da imagem dos cards no celular */
 } /* Finaliza media query para celulares */
+
+/* CONTAINER PRINCIPAL DA PAGINA DOS PRODUTO */
+
+.produto-container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+display:flex;
+gap:40px;
+}
+
+/* CARROSSEL */
+
+.midia-principal img,
+.midia-principal video{
+width:100%;
+height:100%;
+object-fit:cover; /* mantém proporção e corta excesso */
+border-radius:8px;
+}
+
+/* MINIATURAS */
+
+.thumbs{
+display:flex;
+gap:10px;
+margin-top:10px;
+justify-content:center;
+}
+
+.thumbs img{
+width:70px;
+cursor:pointer;
+border-radius:6px;
+opacity:0.7;
+}
+
+.thumbs img:hover{
+opacity:1;
+}
+
+/* MINIATURA DO VIDEO */
+
+.thumb-video{
+width:70px;
+height:70px;
+background:#000;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:6px;
+cursor:pointer;
+font-size:22px;
+}
+
+/* INFO PRODUTO */
+
+.produto-info{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:20px;
+
+backdrop-filter: blur(10px); /* Aplica desfoque suave no fundo do cabeçalho */
+background: rgba(255, 248, 243, 0.82); /* Cria fundo translúcido acolhedor */
+
+padding:30px;
+border-radius:14px;
+box-shadow:0 12px 30px rgba(0,0,0,0.2);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.produto-titulo{
+font-size:28px;
+font-weight:bold;
+}
+
+.produto-descricao{
+font-size:16px;
+line-height:1.6;
+color:#444;
+}
+
+/* BOTÕES */
+
+.botoes{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.botao{
+padding:14px 20px;
+border-radius:6px;
+font-size:16px;
+text-decoration:none;
+color:white;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.produto-container{
+flex-direction:column;
+}
+
+}
+
+/* ÁREA DO CARROSSEL */
+
+.carrossel{
+flex:0 0 500px; /* largura fixa do carrossel */
+max-width:520px; /* limita o tamanho do carrossel */
+}
+
+/* MÍDIA PRINCIPAL */
+
+.midia-principal{
+width:100%;
+aspect-ratio:1/1; /* mantém formato quadrado igual marketplace */
+overflow:hidden;
+cursor:grab;
+touch-action:pan-y;
+user-select:none;
+transition:opacity 0.3s ease;
+}
+
+.fade{
+opacity:1;
+}
+
+.thumb-video{
+transition:all 0.2s;
+width:70px;
+height:90px;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+border-radius:6px;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+
+.thumbs img{
+border:2px solid transparent;
+transition:all 0.2s;
+}
+
+.thumbs img.ativa,
+.thumb-video.ativa{
+border:2px solid #ffcc00;
+transform:scale(1.05);
+}
+
+.midia-principal img{
+transition:transform 0.4s ease;
+cursor:zoom-in;
+}
+
+.midia-principal:hover img{
+transform:scale(1.15);
+}
+
+/* FULLSCREEN */
+
+.fullscreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+cursor:zoom-out;
+}
+
+.fullscreen img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
